@@ -1,0 +1,4 @@
+---
+ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+secret_message: "{{ vault_secret_message }}"
+non_secret_message: This is just a public message

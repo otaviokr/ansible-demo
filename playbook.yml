@@ -1,0 +1,17 @@
+---
+- name: This is a demo playbook
+  hosts: all
+  remote_user: okr
+  tasks:
+    - name: Check facts
+      ansible.builtin.debug:
+        var: ansible_facts
+    - name: Custom message
+      ansible.builtin.debug:
+        msg: Hi there!
+    - name: Custom message (non-encrypted, from vars)
+      ansible.builtin.debug:
+        var: non_secret_message
+    - name: Custom message (encrypted, from vault)
+      ansible.builtin.debug:
+        var: secret_message
